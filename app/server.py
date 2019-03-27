@@ -1,19 +1,18 @@
 from flask import Flask, render_template
 
 app = Flask(__name__)
+  
 
-@app.route('/notaMateria', methods=['GET'])
-def formulario():
-    
-    return render_template('inicio.html')   
+@app.route('/notaMateria')
+def notaMateria(req, nota, porcentaje):
 
-@app.route('/notaMateria', methods=['POST'])
-def notaMateria():
      db = BaseDatos()
      db.crearTabla()
-     nota, porcentaje = db.leer().split()
-     definitiva += nota * porcentaje
+     db.insertar(porcentaje, nota)
+     porcentaje, nota = db.leer().split()
+     definitiva += nota * porcentaje/100
      return definitiva
+
 
     # nota = request.form['nota']
     # porcentaje = request.form['porcentaje']
