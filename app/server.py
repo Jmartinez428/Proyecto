@@ -19,6 +19,17 @@ def notaMateria(req, nota, porcentaje):
     # defin = (porcentaje/100)*nota
     # return defin
 
+@app.route('/promSemestre')
+def promSemestre(req, nota, creditos):
+    definitiva = Definitiva()
+    definitiva.prom_semestre(nota, creditos)
+    definitiva.getPromSemestre()
+
+@app.route('/PGA')
+def PGA(req, totPuntos, totCreditos):
+    pga = Definitiva()
+    pga.PGA(totPuntos, totCreditos)
+    pga.getPGA()
 
 @app.route('/inicio')
 def metodo():
