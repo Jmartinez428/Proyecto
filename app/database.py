@@ -13,6 +13,7 @@ def crearTabla(self):
     conn.commit()
     conn.close()
 
+@app.route('/insertar')
 def insertar(req, porcentaje, nota):
     conn = sqlite3.connect('data.notasdb')
     c = conn.cursor()

@@ -9,14 +9,16 @@ def formulario():
 
 @app.route('/notaMateria', methods=['POST'])
 def notaMateria():
-    # db = BaseDatos()
-    # db.crearTabla()
-    # definitiva = db.leer()
-    # return definitiva
-    nota = request.form['nota']
-    porcentaje = request.form['porcentaje']
-    defin = (porcentaje/100)*nota
-    return defin
+     db = BaseDatos()
+     db.crearTabla()
+     nota, porcentaje = db.leer().split()
+     definitiva += nota * porcentaje
+     return definitiva
+
+    # nota = request.form['nota']
+    # porcentaje = request.form['porcentaje']
+    # defin = (porcentaje/100)*nota
+    # return defin
 
 
 @app.route('/inicio')
