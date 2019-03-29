@@ -1,24 +1,32 @@
 class Definitiva():
 
-defin = 0
-pga = 0
+    promedio = 0
+    pga = 0
+    definitiva = 0
 
-def __init__(self):
-    pass
+    def __init__(self):
+        pass
 
-def prom_semestre(nota, creditos):
+    def notaMateria(self, nota, porcentaje):
+        self.definitiva += nota * porcentaje/100
 
-    sum_credit += creditos
-    sumaPuntos += nota * creditos
-    defin = sumaPuntos / sum_credit
+    def getNotaMateria(self):
+        return self.definitiva
 
-def getPromSemestre():
-    return defin
+    def prom_semestre(self, nota, creditos):
+        sum_credit = 0
+        sumaPuntos = 0
+        sum_credit += creditos
+        sumaPuntos += nota * creditos
+        promedio = sumaPuntos / sum_credit
 
-def PGA(totalPuntos, totalCreditos):
-    pga = totalPuntos/totalCreditos
+    def getPromSemestre(self):
+        return self.promedio
 
-def getPGA():
-    return pga
+    def PGA(self, totalPuntos, totalCreditos):
+        self.pga = totalPuntos/totalCreditos
+
+    def getPGA(self):
+        return self.pga
 
 

@@ -9,24 +9,37 @@
     <script src="main.js"></script>
 </head>
 <body>
-
-    <form method="post" action="/notaMateria" >
-        Porcentaje de la nota: <input name="porcentaje" type="number" value=""/>
-        Ingresa una nota: <input name="nota" type="number" value="" />
-        <input type="submit" value="OK"/>
-    </form>
-
-    <form method="post" action="/promSemestre" >
-        Creditos de la materia: <input name="creditos" type="number" value=""/>
-        Nota de la materia: <input name="nota" type="number" value="" />
-        <input type="submit" value="OK"/>
-    </form>
-
+    
     <form method="post" action="/PGA" >
+        <h1> Promedio general acumulado </h1>
         Creditos totales: <input name="totCreditos" type="number" value=""/>
         Ingrese los puntos totales: <input name="totPuntos" type="number" value="" />
-        <input type="submit" value="OK"/>
+        <input type="submit" value="Ver PGA"/>
     </form>
+
+    <form method="post" action="/notaMateria" >
+        <h1> Definitiva de una materia </h1>
+        Porcentaje de la nota: <input name="porcentaje" type="number" value=""/>
+        Ingresa una nota: <input name="nota" type="number" value="" />
+        <input type="submit" value="Agregar nota"/>
+    </form>
+    <form method="GET" action="/notaMateria">
+        
+        <input type="submit" value="Ver definitiva"/>
+    </form>
+    
+    <form method="post" action="/promSemestre" >
+        <h1> Promedio del Semestre </h1>
+        Creditos de la materia: <input name="creditos" type="number" value=""/>
+        Nota de la materia: <input name="nota" type="number" value="" />
+        <input type="submit" value="Agregar materia"/>
+    </form>
+    <form method="GET" action="/promSemestre">
+        
+        <input type="submit" value="Ver definitiva"/>
+    </form>
+
+    
 
 </body>
 </html>
